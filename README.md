@@ -1,2 +1,5 @@
 # Federated-Blockchain-Architecture-for-Privacy-Preserving-AI-in-Financial-Transactions
-This project, Introduction to AI, Spring 2025 NYCU (Team 17), explores Federated Blockchain for privacy-preserving AI in banking. Developed by Nelong, it compares Federated Blockchain with Federated Learning and traditional centralized models, focusing on secure data sharing, privacy, and AI-enhanced fraud detection.
+Introduction to AI, Spring 2025 NYCU (Team 17)
+
+## Nothing here still zzz.....
+really nothing here...
