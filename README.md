@@ -69,9 +69,7 @@ hi
 
 ## Blockchain-based AI learning
 ### Nelong-Network framework
-The network is based on the framework of [[1]Fabric Hyperledger samples][ref1]. 
-
-See more about fabric hyperledger at [[2]Hyperledger Docs][ref2]
+The network is based on the framework of [[1]Fabric Hyperledger samples][ref1]. And see more about fabric hyperledger at [[2]Hyperledger Docs][ref2]
 
 ### Before start
 First, clone the `nelong-network` folder and enter it. Then, you might want to use `chmod -R +x ./` to manage execution permissions.  
