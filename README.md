@@ -125,7 +125,7 @@ The manual deployment process includes the following steps:
 You may use only part of these commands if you want the process to stop at a specific step.
 See more details with `./network.sh deployCC -h` and `./network.sh cc -h`.
 
-## Smart Contract
+### Smart Contract
 hi
 
 ## Outcome Evaluates
