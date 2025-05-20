@@ -69,7 +69,9 @@ hi
 
 ## Blockchain-based AI learning
 ### Nelong-Network framework
-The network is based on the framework of [Fabric Hyperledger samples][ref2]. And see more about fabric hyperledger at [Hyperledger Docs][ref1]
+The network is based on the framework of [[1]Fabric Hyperledger samples][ref1]. 
+
+See more about fabric hyperledger at [[2]Hyperledger Docs][ref2]
 
 ### Before start
 First, clone the `nelong-network` folder and enter it. Then, you might want to use `chmod -R +x ./` to manage execution permissions.  
@@ -91,6 +93,7 @@ See more details with `./network.sh up -h`, `./network.sh down -h`, or `./networ
 ### Create channel
 After starting your network, you can create your first channel by using:
   `./network.sh createChannel -c <channelName>`  
+
 See more details with `./network.sh createChannel -h`.
 
 ### Deploy your smart contract
@@ -123,6 +126,7 @@ The manual deployment process includes the following steps:
 ./network.sh cc queryCommitted -c mychannel -ccn basic -org 3
 ```
 You may use only part of these commands if you want the process to stop at a specific step.
+
 See more details with `./network.sh deployCC -h` and `./network.sh cc -h`.
 
 ### Smart Contract
@@ -132,8 +136,8 @@ hi
 hi
 
 ## reference
-<a id="ref1">[1]</a> Hyperledger Fabric Documentation: https://hyperledger-fabric.readthedocs.io/en/latest/index.html  
-<a id="ref2">[2]</a> Fabric Hyperledger samples: https://github.com/hyperledger/fabric-samples
+<a id="ref1">[1]</a> Fabric Hyperledger samples: https://github.com/hyperledger/fabric-samples
+<a id="ref2">[2]</a> Hyperledger Fabric Documentation: https://hyperledger-fabric.readthedocs.io/en/latest/index.html  
 
 [ref1]: #ref1
 [ref2]: #ref2
