@@ -1,5 +1,7 @@
 # Federated-Blockchain-Architecture-for-Privacy-Preserving-AI-in-Financial-Transactions
-Introduction to AI, Spring 2025 NYCU (Team 17)## Problem Statement
+Introduction to AI, Spring 2025 NYCU (Team 17)
+
+## Problem Statement
 
 In the banking industry, detecting fraudulent or anomalous customer behavior is a critical task. However, financial institutions often work in isolation, each with its own dataset and detection model. This siloed approach limits the effectiveness of anomaly detection, especially when suspicious behavior spans across multiple banks.
 
@@ -78,7 +80,8 @@ There are several common commands designed in this network. For more parameter s
 * **Terminate network**: `./network.sh down`
 * **Reopen network**: `./network.sh restart`
 
-In fact, the number of organizations in the original project is based on a **hardcoded numbering** system, inherited from the original test-network. We change it in our project, you can start by setting the `-nan` (number and name) flag, like:  
+In fact, the number of organizations in this project is based on a **hardcoded numbering** system, inherited from the original test-network.  
+You can start by setting the `-nan` (number and name) parameter, like:  
   `./network.sh up -nan 3 Nihow Hi GoodMorning` or `./network.sh restart -nan 3 Nihow Hi GoodMorning`.
 
 See more details with `./network.sh up -h`, `./network.sh down -h`, or `./network.sh restart -h`.
@@ -136,4 +139,5 @@ hi
 
 [ref1]: #ref1
 [ref2]: #ref2
-...
+.
+.
