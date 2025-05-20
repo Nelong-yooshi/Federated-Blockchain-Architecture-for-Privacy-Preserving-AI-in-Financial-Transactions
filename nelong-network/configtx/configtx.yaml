@@ -54,25 +54,6 @@ Organizations:
           Type: Signature
           Rule: "OR('Org2MSP.peer')"
   
-  - &Org3
-      Name: Org3MSP
-      ID: Org3MSP
-      MSPDir: ../organizations/peerOrganizations/org3.nelong.com/msp
-  
-      Policies:
-        Readers:
-          Type: Signature
-          Rule: "OR('Org3MSP.admin', 'Org3MSP.peer', 'Org3MSP.client')"
-        Writers:
-          Type: Signature
-          Rule: "OR('Org3MSP.admin', 'Org3MSP.client')"
-        Admins:
-          Type: Signature
-          Rule: "OR('Org3MSP.admin')"
-        Endorsement:
-          Type: Signature
-          Rule: "OR('Org3MSP.peer')"
-  
 Capabilities:
   Channel: &ChannelCapabilities
     V2_0: true
@@ -160,4 +141,3 @@ Profiles:
       Organizations:
         - *Org1
         - *Org2
-        - *Org3
