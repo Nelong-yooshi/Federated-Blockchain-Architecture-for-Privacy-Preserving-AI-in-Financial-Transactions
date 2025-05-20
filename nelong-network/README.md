@@ -24,7 +24,7 @@ You can use `./network.sh -v` to check if you install sucessful and check the ve
 
 * **Reopen network**: `./network.sh restart`
 
-In fact, the number of organizations in the original project is based on a **hardcoded numbering** system, inherited from the original test-network. We change it in our project, you can select the number by the flag `-nan`.
+In fact, the number of organizations in the original test-network is based on a **hardcoded numbering** system. We change it in our project, you can select the number by the flag `-nan`.
 
 And there are the flags:
 - `-nan`: <number of organizations and name of n orgs> - Number of organizations to create (default to 2) And name of the orgs (default to Org1, Org2)

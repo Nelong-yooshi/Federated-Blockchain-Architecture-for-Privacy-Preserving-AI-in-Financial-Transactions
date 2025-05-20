@@ -80,7 +80,7 @@ There are several common commands designed in this network. For more parameter s
 * **Terminate network**: `./network.sh down`
 * **Reopen network**: `./network.sh restart`
 
-In fact, the number of organizations in the original project is based on a **hardcoded numbering** system, inherited from the original test-network. We change it in our project, you can select the number by the `-nan` (number and name) flag, like:  
+In fact, the number of organizations in the original test-network is based on a **hardcoded numbering** system. We change it in our project, you can select the number by the `-nan` (number and name) flag, like:  
   `./network.sh up -nan 3 Nihow Hi GoodMorning` or `./network.sh restart -nan 3 Nihow Hi GoodMorning`.
 
 See more details with `./network.sh up -h`, `./network.sh down -h`, or `./network.sh restart -h`.
