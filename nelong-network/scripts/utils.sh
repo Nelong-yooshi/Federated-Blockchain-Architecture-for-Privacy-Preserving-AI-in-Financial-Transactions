@@ -37,7 +37,6 @@ function printHelp() {
     println "  network.sh \033[0;32mcreateChannel\033[0m [Flags]"
     println
     println "    Flags:"
-    println "    -bft - Use Orderers with consensus type BFT (Not available in Fabric v2.x)"
     println "    -c <channel name> - Name of channel to create (defaults to \"mychannel\")"
     println "    -r <max retry> - CLI times out after certain number of attempts (defaults to 5)"
     println "    -d <delay> - CLI delays for a certain number of seconds (defaults to 3)"
@@ -50,7 +49,6 @@ function printHelp() {
     println
     println " Examples:"
     println "   network.sh createChannel -c channelName"
-    println "   network.sh createChannel -bft"
   elif [ "$USAGE" == "deployCC" ]; then
     println "Usage: "
     println "  network.sh \033[0;32mdeployCC\033[0m [Flags]"
@@ -61,7 +59,7 @@ function printHelp() {
     println "    -ccv <version>  - Chaincode version. 1.0 (default), v2, version3.x, etc"
     println "    -ccs <sequence>  - Chaincode definition sequence.  Must be auto (default) or an integer, 1 , 2, 3, etc"
     println "    -ccp <path>  - File path to the chaincode."
-    println "    -ccep <policy>  - (Optional) Chaincode endorsement policy using signature policy syntax. The default policy requires an endorsement from Org1 and Org2"
+    println "    -ccep <policy>  - (Optional) Chaincode endorsement policy using signature policy syntax. The default policy requires an endorsement from all Orgs"
     println "    -cccg <collection-config>  - (Optional) File path to private data collections configuration file"
     println "    -cci <fcn name>  - (Optional) Name of chaincode initialization function. When a function is provided, the execution of init will be requested and the function will be invoked."
     println
@@ -105,6 +103,12 @@ function printHelp() {
     println "      \033[0;32mpackage\033[0m - package a chaincode in tar format. Stores in directory packagedChaincode"
     println "      \033[0;32minvoke\033[0m - execute an invoke operation"
     println "      \033[0;32mquery\033[0m - execute an query operation"
+    println "      \033[0;32minstall\033[0m - install a chaincode on a peer"
+    println "      \033[0;32mqueryinstalled\033[0m - query a chaincode definition installed on a peer"
+    println "      \033[0;32mapprove\033[0m - approve a chaincode definition for a channel"
+    println "      \033[0;32mcommit\033[0m - commit a chaincode definition to a channel"
+    println "      \033[0;32mquerycommitted\033[0m - query a chaincode definition committed to a channel"
+
     println
     println "    Flags:"
     println "    -org <number>     - Org number for the executing the command (1,2,etc) (default is 1)."    
@@ -121,6 +125,11 @@ function printHelp() {
     println "     \033[0;32mcc package\033[0m -ccn -ccv -ccp -verbose"
     println "     \033[0;32mcc invoke\033[0m -org -c -ccic -verbose"
     println "     \033[0;32mcc query\033[0m -org -c -ccqc -verbose"
+    println "     \033[0;32mcc install\033[0m -org -c -ccn -ccv -ccp -verbose"
+    println "     \033[0;32mcc queryinstalled\033[0m -org -c -verbose"
+    println "     \033[0;32mcc approve\033[0m -org -c -ccn -ccv -ccp -verbose"
+    println "     \033[0;32mcc commit\033[0m -org -c -ccn -ccv -ccp -verbose"
+    println "     \033[0;32mcc querycommitted\033[0m -org -c -ccn -verbose"
     println
     println " Examples:"
     println "   network.sh cc list -org 1"

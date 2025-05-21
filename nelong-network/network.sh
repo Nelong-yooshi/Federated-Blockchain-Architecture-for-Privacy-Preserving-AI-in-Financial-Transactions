@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+#
+# Program Name: nelong-network
+# Description: Hyperledger Fabric Network
+# Author: nelong
+# CreateDate: 2025/05/20
+#
+# Chage Log:
+# 1.0 2025/05/20 : Create
+# 1.0 2025/05/20 : Build network
+#
+
+VERSION="v1.0.0"
 ################################################################################
 #
 #  ##############
@@ -832,6 +844,8 @@ CC_SEQUENCE=${CC_SEQUENCE}
 EOF
 elif [ "$MODE" == "test" ]; then
   test_function
+elif [ "$MODE" == "-v" ]; then
+  infoln "Nelong-Network $VERSION"
 else
   printHelp
   exit 1
