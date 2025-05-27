@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - test-action  # 可改成你的分支名稱
-
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: self-hosted  # runner name: Nelong
