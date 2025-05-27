@@ -1,0 +1,164 @@
+Organizations:
+  - &Orderer
+    Name: Orderer
+    ID: OrdererMSP
+    MSPDir: ../orderer/nl.com/msp
+
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('OrdererMSP.admin')"
+    OrdererEndpoints:
+      - orderer.nl.com:6051
+  - &GoodMorning
+      Name: GoodMorningMSP
+      ID: GoodMorningMSP
+      MSPDir: ../peers/GoodMorning_peer/nl.com/msp
+  
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('GoodMorningMSP.admin', 'GoodMorningMSP.peer', 'GoodMorningMSP.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('GoodMorningMSP.admin', 'GoodMorningMSP.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('GoodMorningMSP.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('GoodMorningMSP.peer')"
+  
+  - &Hi
+      Name: HiMSP
+      ID: HiMSP
+      MSPDir: ../peers/Hi_peer/nl.com/msp
+  
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('HiMSP.admin', 'HiMSP.peer', 'HiMSP.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('HiMSP.admin', 'HiMSP.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('HiMSP.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('HiMSP.peer')"
+
+  - &OHaYao
+      Name: OHaYaoMSP
+      ID: OHaYaoMSP
+      MSPDir: ../peers/OHaYao_peer/nl.com/msp
+  
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('OHaYaoMSP.admin', 'OHaYaoMSP.peer', 'OHaYaoMSP.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('OHaYaoMSP.admin', 'OHaYaoMSP.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('OHaYaoMSP.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('OHaYaoMSP.peer')"
+  
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+  Orderer: &OrdererCapabilities
+    V2_0: true
+  Application: &ApplicationCapabilities
+    V2_5: true
+
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  Addresses:
+    - orderer.nl.com:6051
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  ChannelUsingRaft:
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      OrdererType: etcdraft
+      EtcdRaft:
+        Consenters:
+          - Host: orderer.nl.com
+            Port: 6051
+            ClientTLSCert: ../orderer/nl.com/orderer.nl.com/tls/server.crt
+            ServerTLSCert: ../orderer/nl.com/orderer.nl.com/tls/server.crt
+      Organizations:
+        - *Orderer
+      Capabilities: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *GoodMorning
+        - *Hi
+        - *OHaYao
+      Capabilities: *ApplicationCapabilities
