@@ -22,10 +22,12 @@ jobs:
           docker rm enclave-server || true
 
       - name: Build Docker image
+        working-directory: nelong-network/train
         run: |
           docker build -t enclave-server .
 
       - name: Run Docker container
+        working-directory: nelong-network/train
         run: |
           docker run -d \
             --name enclave-server \
