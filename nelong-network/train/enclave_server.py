@@ -60,6 +60,9 @@ signature = private_key.sign(
 with open(SIGNATURE_PATH, "wb") as f:
     f.write(signature)
 
+@app.route('/')
+def index():
+    return "Hello from Flask!"
 
 @app.route("/attestation", methods=["GET"])
 def get_attestation():
