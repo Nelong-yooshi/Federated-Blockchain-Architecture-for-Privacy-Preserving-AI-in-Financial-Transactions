@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  enclave_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    contrainer_name: enclave_server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./enclave:/app
+    environment:
+      - FLASK_ENV=development
+  
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    contrainer_name: client
+    depends_on:
+      - enclave_server
+    volumes:
+      - ./client:/app
+    environment:
+      - ENCLAVE_SERVER_URL=http://enclave_server:5000
+    command: ["python", "client.py"]
