@@ -6,3 +6,5 @@ WORKDIR /app
 COPY . /app
 
 CMD ["python", "enclave_server.py"]
+
+

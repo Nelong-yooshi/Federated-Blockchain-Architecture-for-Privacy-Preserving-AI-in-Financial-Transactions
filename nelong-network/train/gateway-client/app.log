@@ -1,0 +1,7 @@
+time="2025-05-28T22:16:55+08:00" level=info msg="level=info msg=\"Server running on: 8080\""
+time="2025-05-28T22:34:42+08:00" level=info msg="level=info msg=\"Server running on: 8080\""
+time="2025-05-28T22:37:05+08:00" level=info msg="level=info msg=\"Processing request...\" ip=127.0.0.1 method=POST path=/pubkey"
+time="2025-05-28T22:37:05+08:00" level=info msg="level=info msg=\"Getting pubkey...\" pubkey=\"YWxqO2Rmc2Fsajtrc2ZkYWw7ams=\""
+time="2025-05-29T16:19:19+08:00" level=info msg="level=info msg=\"Server running on: 8080\""
+time="2025-05-29T16:25:31+08:00" level=info msg="level=info msg=\"Processing request...\" ip=\"2001:b400:e251:126c:4ef:9879:14ed:3bd1\" method=GET path=/function_lst"
+time="2025-05-29T16:25:32+08:00" level=info msg="level=info msg=\"Processing request...\" ip=\"2001:b400:e251:126c:4ef:9879:14ed:3bd1\" method=GET path=/favicon.ico"

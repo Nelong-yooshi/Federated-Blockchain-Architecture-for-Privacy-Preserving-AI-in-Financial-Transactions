@@ -34,7 +34,3 @@ jobs:
             -p 5000:5000 \
             enclave-server
 
-      - name: Start Cloudflare Tunnel
-        run: |
-          nohup cloudflared tunnel --config ~/.cloudflared/config.yml run ca3fc89b-807d-4ca5-802b-749bc5a8df9a &
-
