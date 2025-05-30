@@ -1,0 +1,458 @@
+Loaded config: {'batch_size': 64, 'lr': 0.001, 'epochs': 50, 'weight_decay': 1e-05, 'latent_dim': 32, 'num_clients': 10, 'participation_ratio': 0.6, 'local_epochs': 3}
+
+==================================================
+Training autoencoder model
+==================================================
+
+
+Centralized Training
+------------------------------
+Epoch 1/50
+Train Loss: 0.0922
+Test F1: 0.8906, Precision: 0.8561, Recall: 0.9280
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 2/50
+Train Loss: 0.0613
+Test F1: 0.8783, Precision: 0.8370, Recall: 0.9240
+--------------------------------------------------
+Epoch 3/50
+Train Loss: 0.0443
+Test F1: 0.8898, Precision: 0.8345, Recall: 0.9530
+--------------------------------------------------
+Epoch 4/50
+Train Loss: 0.0359
+Test F1: 0.9175, Precision: 0.8863, Recall: 0.9510
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 5/50
+Train Loss: 0.0314
+Test F1: 0.9230, Precision: 0.8948, Recall: 0.9530
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 6/50
+Train Loss: 0.0299
+Test F1: 0.9160, Precision: 0.8905, Recall: 0.9430
+--------------------------------------------------
+Epoch 7/50
+Train Loss: 0.0291
+Test F1: 0.9209, Precision: 0.9167, Recall: 0.9250
+--------------------------------------------------
+Epoch 8/50
+Train Loss: 0.0286
+Test F1: 0.9243, Precision: 0.9148, Recall: 0.9340
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 9/50
+Train Loss: 0.0274
+Test F1: 0.9254, Precision: 0.9329, Recall: 0.9180
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 10/50
+Train Loss: 0.0255
+Test F1: 0.9262, Precision: 0.9295, Recall: 0.9230
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 11/50
+Train Loss: 0.0247
+Test F1: 0.9224, Precision: 0.9120, Recall: 0.9330
+--------------------------------------------------
+Epoch 12/50
+Train Loss: 0.0242
+Test F1: 0.9239, Precision: 0.9131, Recall: 0.9350
+--------------------------------------------------
+Epoch 13/50
+Train Loss: 0.0239
+Test F1: 0.9231, Precision: 0.9105, Recall: 0.9360
+--------------------------------------------------
+Epoch 14/50
+Train Loss: 0.0236
+Test F1: 0.9292, Precision: 0.9021, Recall: 0.9580
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 15/50
+Train Loss: 0.0232
+Test F1: 0.9275, Precision: 0.9153, Recall: 0.9400
+--------------------------------------------------
+Epoch 16/50
+Train Loss: 0.0225
+Test F1: 0.9316, Precision: 0.9103, Recall: 0.9540
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 17/50
+Train Loss: 0.0217
+Test F1: 0.9300, Precision: 0.8992, Recall: 0.9630
+--------------------------------------------------
+Epoch 18/50
+Train Loss: 0.0213
+Test F1: 0.9355, Precision: 0.9078, Recall: 0.9650
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 19/50
+Train Loss: 0.0211
+Test F1: 0.9335, Precision: 0.9006, Recall: 0.9690
+--------------------------------------------------
+Epoch 20/50
+Train Loss: 0.0207
+Test F1: 0.9381, Precision: 0.9218, Recall: 0.9550
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 21/50
+Train Loss: 0.0196
+Test F1: 0.9491, Precision: 0.9291, Recall: 0.9700
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 22/50
+Train Loss: 0.0181
+Test F1: 0.9496, Precision: 0.9292, Recall: 0.9710
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 23/50
+Train Loss: 0.0175
+Test F1: 0.9525, Precision: 0.9431, Recall: 0.9620
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 24/50
+Train Loss: 0.0172
+Test F1: 0.9522, Precision: 0.9379, Recall: 0.9670
+--------------------------------------------------
+Epoch 25/50
+Train Loss: 0.0169
+Test F1: 0.9529, Precision: 0.9458, Recall: 0.9600
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 26/50
+Train Loss: 0.0166
+Test F1: 0.9588, Precision: 0.9412, Recall: 0.9770
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 27/50
+Train Loss: 0.0165
+Test F1: 0.9576, Precision: 0.9454, Recall: 0.9700
+--------------------------------------------------
+Epoch 28/50
+Train Loss: 0.0164
+Test F1: 0.9573, Precision: 0.9498, Recall: 0.9650
+--------------------------------------------------
+Epoch 29/50
+Train Loss: 0.0162
+Test F1: 0.9580, Precision: 0.9352, Recall: 0.9820
+--------------------------------------------------
+Epoch 30/50
+Train Loss: 0.0161
+Test F1: 0.9584, Precision: 0.9395, Recall: 0.9780
+--------------------------------------------------
+Epoch 31/50
+Train Loss: 0.0160
+Test F1: 0.9604, Precision: 0.9519, Recall: 0.9690
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 32/50
+Train Loss: 0.0160
+Test F1: 0.9594, Precision: 0.9396, Recall: 0.9800
+--------------------------------------------------
+Epoch 33/50
+Train Loss: 0.0158
+Test F1: 0.9606, Precision: 0.9457, Recall: 0.9760
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 34/50
+Train Loss: 0.0158
+Test F1: 0.9618, Precision: 0.9433, Recall: 0.9810
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 35/50
+Train Loss: 0.0157
+Test F1: 0.9636, Precision: 0.9486, Recall: 0.9790
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 36/50
+Train Loss: 0.0156
+Test F1: 0.9619, Precision: 0.9520, Recall: 0.9720
+--------------------------------------------------
+Epoch 37/50
+Train Loss: 0.0155
+Test F1: 0.9612, Precision: 0.9441, Recall: 0.9790
+--------------------------------------------------
+Epoch 38/50
+Train Loss: 0.0155
+Test F1: 0.9616, Precision: 0.9476, Recall: 0.9760
+--------------------------------------------------
+Epoch 39/50
+Train Loss: 0.0154
+Test F1: 0.9597, Precision: 0.9545, Recall: 0.9650
+--------------------------------------------------
+Epoch 40/50
+Train Loss: 0.0154
+Test F1: 0.9633, Precision: 0.9557, Recall: 0.9710
+--------------------------------------------------
+Epoch 41/50
+Train Loss: 0.0152
+Test F1: 0.9630, Precision: 0.9392, Recall: 0.9880
+--------------------------------------------------
+Epoch 42/50
+Train Loss: 0.0152
+Test F1: 0.9666, Precision: 0.9498, Recall: 0.9840
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 43/50
+Train Loss: 0.0150
+Test F1: 0.9615, Precision: 0.9493, Recall: 0.9740
+--------------------------------------------------
+Epoch 44/50
+Train Loss: 0.0148
+Test F1: 0.9633, Precision: 0.9566, Recall: 0.9700
+--------------------------------------------------
+Epoch 45/50
+Train Loss: 0.0146
+Test F1: 0.9655, Precision: 0.9523, Recall: 0.9790
+--------------------------------------------------
+Epoch 46/50
+Train Loss: 0.0144
+Test F1: 0.9663, Precision: 0.9578, Recall: 0.9750
+--------------------------------------------------
+Epoch 47/50
+Train Loss: 0.0142
+Test F1: 0.9669, Precision: 0.9560, Recall: 0.9780
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 48/50
+Train Loss: 0.0141
+Test F1: 0.9683, Precision: 0.9597, Recall: 0.9770
+--------------------------------------------------
+Model saved to saved_models\autoencoder_mnist_best.pth
+Epoch 49/50
+Train Loss: 0.0139
+Test F1: 0.9674, Precision: 0.9552, Recall: 0.9800
+--------------------------------------------------
+Epoch 50/50
+Train Loss: 0.0138
+Test F1: 0.9664, Precision: 0.9551, Recall: 0.9780
+--------------------------------------------------
+
+Federated Training
+------------------------------
+Round 1/50
+Avg Client Loss: 0.1525
+Test F1: 0.8473, Precision: 0.7746, Recall: 0.9350
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 2/50
+Avg Client Loss: 0.0658
+Test F1: 0.8795, Precision: 0.8425, Recall: 0.9200
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 3/50
+Avg Client Loss: 0.0634
+Test F1: 0.8880, Precision: 0.8548, Recall: 0.9240
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 4/50
+Avg Client Loss: 0.0620
+Test F1: 0.9101, Precision: 0.8901, Recall: 0.9310
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 5/50
+Avg Client Loss: 0.0542
+Test F1: 0.9041, Precision: 0.9032, Recall: 0.9050
+--------------------------------------------------
+Round 6/50
+Avg Client Loss: 0.0496
+Test F1: 0.8887, Precision: 0.8683, Recall: 0.9100
+--------------------------------------------------
+Round 7/50
+Avg Client Loss: 0.0480
+Test F1: 0.8856, Precision: 0.8773, Recall: 0.8940
+--------------------------------------------------
+Round 8/50
+Avg Client Loss: 0.0432
+Test F1: 0.8877, Precision: 0.8434, Recall: 0.9370
+--------------------------------------------------
+Round 9/50
+Avg Client Loss: 0.0387
+Test F1: 0.8890, Precision: 0.8523, Recall: 0.9290
+--------------------------------------------------
+Round 10/50
+Avg Client Loss: 0.0368
+Test F1: 0.8911, Precision: 0.8367, Recall: 0.9530
+--------------------------------------------------
+Round 11/50
+Avg Client Loss: 0.0356
+Test F1: 0.8997, Precision: 0.8811, Recall: 0.9190
+--------------------------------------------------
+Round 12/50
+Avg Client Loss: 0.0342
+Test F1: 0.9155, Precision: 0.8904, Recall: 0.9420
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 13/50
+Avg Client Loss: 0.0319
+Test F1: 0.9145, Precision: 0.8707, Recall: 0.9630
+--------------------------------------------------
+Round 14/50
+Avg Client Loss: 0.0305
+Test F1: 0.9148, Precision: 0.8778, Recall: 0.9550
+--------------------------------------------------
+Round 15/50
+Avg Client Loss: 0.0298
+Test F1: 0.9143, Precision: 0.8813, Recall: 0.9500
+--------------------------------------------------
+Round 16/50
+Avg Client Loss: 0.0295
+Test F1: 0.9164, Precision: 0.8774, Recall: 0.9590
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 17/50
+Avg Client Loss: 0.0291
+Test F1: 0.9143, Precision: 0.8813, Recall: 0.9500
+--------------------------------------------------
+Round 18/50
+Avg Client Loss: 0.0290
+Test F1: 0.9134, Precision: 0.8803, Recall: 0.9490
+--------------------------------------------------
+Round 19/50
+Avg Client Loss: 0.0286
+Test F1: 0.9144, Precision: 0.8806, Recall: 0.9510
+--------------------------------------------------
+Round 20/50
+Avg Client Loss: 0.0287
+Test F1: 0.9155, Precision: 0.8904, Recall: 0.9420
+--------------------------------------------------
+Round 21/50
+Avg Client Loss: 0.0284
+Test F1: 0.9167, Precision: 0.8884, Recall: 0.9470
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 22/50
+Avg Client Loss: 0.0284
+Test F1: 0.9169, Precision: 0.8825, Recall: 0.9540
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 23/50
+Avg Client Loss: 0.0283
+Test F1: 0.9142, Precision: 0.8827, Recall: 0.9480
+--------------------------------------------------
+Round 24/50
+Avg Client Loss: 0.0282
+Test F1: 0.9151, Precision: 0.8843, Recall: 0.9480
+--------------------------------------------------
+Round 25/50
+Avg Client Loss: 0.0281
+Test F1: 0.9171, Precision: 0.9103, Recall: 0.9240
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 26/50
+Avg Client Loss: 0.0279
+Test F1: 0.9161, Precision: 0.8989, Recall: 0.9340
+--------------------------------------------------
+Round 27/50
+Avg Client Loss: 0.0280
+Test F1: 0.9183, Precision: 0.9041, Recall: 0.9330
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 28/50
+Avg Client Loss: 0.0278
+Test F1: 0.9187, Precision: 0.9057, Recall: 0.9320
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 29/50
+Avg Client Loss: 0.0278
+Test F1: 0.9188, Precision: 0.8994, Recall: 0.9390
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 30/50
+Avg Client Loss: 0.0276
+Test F1: 0.9181, Precision: 0.9009, Recall: 0.9360
+--------------------------------------------------
+Round 31/50
+Avg Client Loss: 0.0277
+Test F1: 0.9197, Precision: 0.9059, Recall: 0.9340
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 32/50
+Avg Client Loss: 0.0274
+Test F1: 0.9196, Precision: 0.9019, Recall: 0.9380
+--------------------------------------------------
+Round 33/50
+Avg Client Loss: 0.0274
+Test F1: 0.9219, Precision: 0.9055, Recall: 0.9390
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 34/50
+Avg Client Loss: 0.0272
+Test F1: 0.9204, Precision: 0.9052, Recall: 0.9360
+--------------------------------------------------
+Round 35/50
+Avg Client Loss: 0.0269
+Test F1: 0.9243, Precision: 0.9266, Recall: 0.9220
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 36/50
+Avg Client Loss: 0.0263
+Test F1: 0.9260, Precision: 0.9200, Recall: 0.9320
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 37/50
+Avg Client Loss: 0.0256
+Test F1: 0.9270, Precision: 0.9210, Recall: 0.9330
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 38/50
+Avg Client Loss: 0.0251
+Test F1: 0.9293, Precision: 0.9131, Recall: 0.9460
+--------------------------------------------------
+Model saved to saved_models\federated_autoencoder_mnist_best.pth
+Round 39/50
+Avg Client Loss: 0.0248
+Test F1: 0.9279, Precision: 0.9228, Recall: 0.9330
+--------------------------------------------------
+Round 40/50
+Avg Client Loss: 0.0244
+Test F1: 0.9239, Precision: 0.9131, Recall: 0.9350
+--------------------------------------------------
+Round 41/50
+Avg Client Loss: 0.0241
+Test F1: 0.9251, Precision: 0.9174, Recall: 0.9330
+--------------------------------------------------
+Round 42/50
+Avg Client Loss: 0.0239
+Test F1: 0.9229, Precision: 0.9121, Recall: 0.9340
+--------------------------------------------------
+Round 43/50
+Avg Client Loss: 0.0237
+Test F1: 0.9225, Precision: 0.9162, Recall: 0.9290
+--------------------------------------------------
+Round 44/50
+Avg Client Loss: 0.0237
+Test F1: 0.9246, Precision: 0.8899, Recall: 0.9620
+--------------------------------------------------
+Round 45/50
+Avg Client Loss: 0.0233
+Test F1: 0.9252, Precision: 0.9294, Recall: 0.9210
+--------------------------------------------------
+Round 46/50
+Avg Client Loss: 0.0234
+Test F1: 0.9260, Precision: 0.9393, Recall: 0.9130
+--------------------------------------------------
+Round 47/50
+Avg Client Loss: 0.0230
+Test F1: 0.9229, Precision: 0.9299, Recall: 0.9160
+--------------------------------------------------
+Round 48/50
+Avg Client Loss: 0.0231
+Test F1: 0.9257, Precision: 0.8894, Recall: 0.9650
+--------------------------------------------------
+Round 49/50
+Avg Client Loss: 0.0229
+Test F1: 0.9255, Precision: 0.8808, Recall: 0.9750
+--------------------------------------------------
+Round 50/50
+Avg Client Loss: 0.0227
+Test F1: 0.9245, Precision: 0.8855, Recall: 0.9670
+--------------------------------------------------
+
+Final Metrics Comparison:
+Metric          Centralized     Federated
+f1              0.9664          0.9245
+precision       0.9551          0.8855
+recall          0.9780          0.9670
