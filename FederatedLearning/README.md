@@ -37,5 +37,5 @@ To customize training parameters, you can use the following command-line options
 
 > Example:
 > To run with the non-IID dataset for 30 rounds and 5 local epochs:
-> ```python main.py --mode noniid --rounds 30 --local_epochs 5 ```
+```python main.py --mode noniid --rounds 30 --local_epochs 5 ```
 
