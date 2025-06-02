@@ -61,12 +61,6 @@ Federated learning is enhanced with blockchain and zero-knowledge proofs (ZKP). 
   - Requires integration of blockchain, model frameworks, and TEE infrastructure (e.g., Intel SGX, AMD SEV)
 
 
-## Current Approach
-hi
-
-## Federated Learning
-hi
-
 ## Blockchain-based AI learning
 ### Nelong-Network framework
 The network is based on the framework of [[1]Fabric Hyperledger samples][ref1]. And see more about fabric hyperledger at [[2]Hyperledger Docs][ref2]
@@ -127,10 +121,8 @@ You may use only part of these commands if you want the process to stop at a spe
 See more details with `./network.sh deployCC -h` and `./network.sh cc -h`.
 
 ### Smart Contract
-hi
+![chaincode](https://github.com/user-attachments/assets/45ae134f-bd64-494a-b5e3-7cb8947a102c)
 
-## Outcome Evaluates
-hi
 
 ## reference
 * <a id="ref1">[1]</a> Fabric Hyperledger samples: https://github.com/hyperledger/fabric-samples
