@@ -1,0 +1,13 @@
+# 通用參數
+batch_size: 64
+lr: 0.001
+epochs: 50
+weight_decay: 0.00001
+
+# Autoencoder特定參數
+latent_dim: 32
+
+# 聯邦學習特定參數
+num_clients: 10
+participation_ratio: 0.6
+local_epochs: 3
