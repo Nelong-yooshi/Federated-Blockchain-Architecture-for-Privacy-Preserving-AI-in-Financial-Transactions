@@ -245,7 +245,7 @@ You may use only part of these commands if you want the process to stop at a spe
 See more details with `./network.sh deployCC -h` and `./network.sh cc -h`.
 
 ### GUI
-This interface is designed in React and Typescript with the [sample](https://github.com/devias-io/material-kit-react). And you can run up by `npm install` and `npm run dev`.
+This interface is designed in React and Typescript with the [sample](https://github.com/devias-io/material-kit-react). You need to get into file `frontend`, then you can run up by `npm install` and `npm run dev`.
 
 
 ## reference
