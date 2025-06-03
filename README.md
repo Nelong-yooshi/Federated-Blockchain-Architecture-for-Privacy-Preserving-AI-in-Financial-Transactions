@@ -245,14 +245,16 @@ You may use only part of these commands if you want the process to stop at a spe
 See more details with `./network.sh deployCC -h` and `./network.sh cc -h`.
 
 ### GUI
-This interface is designed in React and Typescript with the [sample](https://github.com/devias-io/material-kit-react). You need to get into file `frontend`, then you can run up by `npm install` and `npm run dev`.
+This interface is designed in React and Typescript with the [[3]sample][ref3]. You need to get into file `frontend`, then you can run up by `npm install` and `npm run dev`.
 
 
 ## reference
 * <a id="ref1">[1]</a> Fabric Hyperledger samples: https://github.com/hyperledger/fabric-samples
-* <a id="ref2">[2]</a> Hyperledger Fabric Documentation: https://hyperledger-fabric.readthedocs.io/en/latest/index.html  
+* <a id="ref2">[2]</a> Hyperledger Fabric Documentation: https://hyperledger-fabric.readthedocs.io/en/latest/index.html
+* * <a id="ref3">[3]</a> material kit react: https://github.com/devias-io/material-kit-react
 
 [ref1]: #ref1
 [ref2]: #ref2
+[ref3]: #ref3
 .
 .
