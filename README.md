@@ -251,10 +251,8 @@ This interface is designed in React and Typescript with the [[3]sample][ref3]. Y
 ## reference
 * <a id="ref1">[1]</a> Fabric Hyperledger samples: https://github.com/hyperledger/fabric-samples
 * <a id="ref2">[2]</a> Hyperledger Fabric Documentation: https://hyperledger-fabric.readthedocs.io/en/latest/index.html
-* * <a id="ref3">[3]</a> material kit react: https://github.com/devias-io/material-kit-react
+* <a id="ref3">[3]</a> material kit react: https://github.com/devias-io/material-kit-react
 
 [ref1]: #ref1
 [ref2]: #ref2
 [ref3]: #ref3
-.
-.
