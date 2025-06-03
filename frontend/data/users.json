@@ -1,0 +1,34 @@
+[
+  {
+    "id": "USR-000",
+    "firstName": "WEI",
+    "lastName": "LIU",
+    "email": "rlooooong@gmail.com",
+    "password": "reset123",
+    "token": "e5f8e14f-03d3-429d-ab44-dfea6fe44f0c"
+  },
+  {
+    "id": "USR-001",
+    "firstName": "1",
+    "lastName": "1",
+    "email": "rlooooong1@gmail.com",
+    "password": "11111111",
+    "token": "f72d878d-2c9d-451a-a560-a545201ada52"
+  },
+  {
+    "id": "USR-002",
+    "firstName": "1",
+    "lastName": "1",
+    "email": "rlooooong2@gmail.com",
+    "password": "111111111111111111",
+    "token": "166eb372-44dd-4c98-b68c-0ed5c7bba890"
+  },
+  {
+    "id": "USR-003",
+    "firstName": "韋良",
+    "lastName": "劉",
+    "email": "nihow@gmail.com",
+    "password": "5555555555",
+    "token": "eafbeb62-59c2-45d5-a0ed-70cbec4feecd"
+  }
+]
