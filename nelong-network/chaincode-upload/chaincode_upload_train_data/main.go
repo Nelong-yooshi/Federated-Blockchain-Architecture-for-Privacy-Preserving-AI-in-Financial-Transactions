@@ -72,8 +72,8 @@ func main() {
 	network := gw.GetNetwork(channelName)
 	contract := network.GetContract(chaincodeName)
 
-	// var trainData = utils.GetTrainData(os.Getenv("TXN_DATA_PATH"), os.Getenv("ACCT_DATA_PATH"))
-	// utils.UploadTrainData(contract, mspID, sha256Hash, trainData)
+	var trainData = utils.GetTrainData(os.Getenv("TXN_DATA_PATH"), os.Getenv("ACCT_DATA_PATH"))
+	utils.UploadTrainData(contract, mspID, sha256Hash, trainData)
 
 	queryData := utils.GetDataByID(contract, mspID, sha256Hash)
 	fmt.Println(queryData.TxnData)

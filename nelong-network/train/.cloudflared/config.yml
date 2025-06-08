@@ -1,0 +1,7 @@
+tunnel: ca3fc89b-807d-4ca5-802b-749bc5a8df9a      # 上一步取得的 Tunnel ID
+credentials-file: /home/nemo/.cloudflared/ca3fc89b-807d-4ca5-802b-749bc5a8df9a.json
+
+ingress:
+  - hostname: tdx-env.nemo00407.uk
+    service: http://localhost:5000   # 你的 Flask API 監聽的本機端口
+  - service: http_status:404

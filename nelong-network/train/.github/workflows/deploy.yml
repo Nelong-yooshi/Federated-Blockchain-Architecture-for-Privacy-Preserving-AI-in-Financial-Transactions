@@ -1,0 +1,37 @@
+name: Deploy Flask App to Docker + Cloudflare Tunnel
+
+on:
+  push:
+    branches:
+      - test-action  # 可改成你的分支名稱
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: self-hosted  # runner name: Nelong
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Change to app directory
+        working-directory: nelong-network/train
+        run: echo "Switched to enclave-app"
+
+      - name: Stop old container if exists
+        run: |
+          docker stop enclave-server || true
+          docker rm enclave-server || true
+
+      - name: Build Docker image
+        run: |
+          docker build -t enclave-server .
+
+      - name: Run Docker container
+        run: |
+          docker run -d \
+            --name enclave-server \
+            -p 5000:5000 \
+            enclave-server
+
+      - name: Start Cloudflare Tunnel
+        run: |
+          nohup cloudflared tunnel --config ~/.cloudflared/config.yml run ca3fc89b-807d-4ca5-802b-749bc5a8df9a &

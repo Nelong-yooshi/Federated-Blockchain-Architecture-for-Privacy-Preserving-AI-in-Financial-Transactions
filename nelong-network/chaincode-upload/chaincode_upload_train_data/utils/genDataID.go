@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func GenDataID(pkeyPath string) string {
+func GetAttestation() string {
 	pkey, err := os.ReadFile(pkeyPath)
 	if err != nil {
 		panic(fmt.Errorf("reading publickey error.\n %w", err))

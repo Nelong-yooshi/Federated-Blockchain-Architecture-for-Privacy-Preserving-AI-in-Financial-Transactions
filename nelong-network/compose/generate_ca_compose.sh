@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ORGS_NUM=$1
 BASE_PORT=7054
 OP_BASE_PORT=17054
