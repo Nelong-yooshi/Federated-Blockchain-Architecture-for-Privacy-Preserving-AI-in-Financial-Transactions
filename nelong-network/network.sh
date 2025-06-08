@@ -266,8 +266,12 @@ function networkUp() {
 
   . ./compose/generate-nelong-network.sh "$ORGS_NUM"
   . ./compose/docker/generate-docker-nelong-network.sh "$ORGS_NUM"
+  . ./compose/generate-couch.sh "$ORGS_NUM"
 
   COMPOSE_FILES="-f compose/${COMPOSE_FILE_BASE} -f compose/${CONTAINER_CLI}/${CONTAINER_CLI}-${COMPOSE_FILE_BASE}"
+  if [ "${DATABASE}" == "couchdb" ]; then
+    COMPOSE_FILES="${COMPOSE_FILES} -f compose/${COMPOSE_FILE_COUCH} -f compose/${CONTAINER_CLI}/${CONTAINER_CLI}-${COMPOSE_FILE_COUCH}"
+  fi
 
 
   DOCKER_SOCK="${DOCKER_SOCK}" ${CONTAINER_CLI_COMPOSE} ${COMPOSE_FILES} up -d 2>&1
@@ -405,7 +409,8 @@ function queryChaincode() {
 function networkDown() {
   COMPOSE_BASE_FILES="-f compose/${COMPOSE_FILE_BASE} -f compose/${CONTAINER_CLI}/${CONTAINER_CLI}-${COMPOSE_FILE_BASE}"
   COMPOSE_CA_FILES="-f compose/${COMPOSE_FILE_CA} -f compose/${CONTAINER_CLI}/${CONTAINER_CLI}-${COMPOSE_FILE_CA}"
-  COMPOSE_FILES="${COMPOSE_BASE_FILES} ${COMPOSE_CA_FILES}"
+  COMPOSE_COUCH_FILES="-f compose/${COMPOSE_FILE_COUCH} -f compose/${CONTAINER_CLI}/${CONTAINER_CLI}-${COMPOSE_FILE_COUCH}"
+  COMPOSE_FILES="${COMPOSE_BASE_FILES} ${COMPOSE_COUCH_FILES} ${COMPOSE_CA_FILES}"
 
 
   if [ "${CONTAINER_CLI}" == "docker" ]; then
@@ -605,6 +610,7 @@ fi
 COMPOSE_FILE_BASE=compose-nelong-network.yaml
 # certificate authorities compose file
 COMPOSE_FILE_CA=compose-ca.yaml
+COMPOSE_FILE_COUCH=compose-couch.yaml
 
 # Get docker sock path from environment variable
 SOCK="${DOCKER_HOST:-/var/run/docker.sock}"
@@ -709,6 +715,10 @@ while [[ $# -ge 1 ]] ; do
     CLI_DELAY=$2
     shift
     ;;
+  -s )
+    DATABASE="$2"
+    shift
+    ;;
   -ccn )
     CC_NAME="$2"
     shift
@@ -726,7 +736,7 @@ while [[ $# -ge 1 ]] ; do
     shift
     ;;
   -ccep )
-    CC_END_POLICY==$2
+    CC_END_POLICY=$2
     shift
     ;;
   -cccg )

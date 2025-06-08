@@ -20,8 +20,10 @@ import (
 	"fmt"
 	"os"
 	"time"
-
+	"flag"
+	"context"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 
 	"gateway-client/handler"
 	"gateway-client/logger"
@@ -43,8 +45,15 @@ type AttestationResponse struct {
 }
 
 func main() {
+	// 定義一個 string flag，名字叫 envFile，預設是 ".env"
+    envFile := flag.String("envFile", ".env", "Specify env file to load")
+	portArg := flag.String("port", "7080", "Specify port to open")
+
+    // 解析命令列參數
+    flag.Parse()
+
 	// load environment variables
-	err := godotenv.Load()
+	err := godotenv.Load(*envFile)
 	if err != nil {
 		logger.Log.Error(err)
 	}
@@ -62,6 +71,16 @@ func main() {
 	logger.InitLogger(isProd)
 
 	r := gin.New()
+	
+    // CORS 中介層設定，允許所有來源，並設定可用的 HTTP 方法與標頭
+    r.Use(cors.New(cors.Config{
+        AllowOrigins:     []string{"*"},           // 允許所有來源，實務可換成指定網域
+        AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+        AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
+        ExposeHeaders:    []string{"Content-Length"},
+        AllowCredentials: true,
+        MaxAge:           12 * time.Hour,
+    }))
 
 	// add log mid layer
 	r.Use(func(c *gin.Context) {
@@ -80,15 +99,15 @@ func main() {
 	defer clientConnection.Close()
 	id := utils.NewIdentity(certPath, mspID)
 	sign := utils.NewSign(keyPath)
-	gw, err  := client.Connect(
+	gw, err := client.Connect(
 		id,
 		client.WithSign(sign),
 		client.WithHash(hash.SHA256),
 		client.WithClientConnection(clientConnection),
-		client.WithEvaluateTimeout(5*time.Second),
-		client.WithEndorseTimeout(15*time.Second),
-		client.WithSubmitTimeout(5*time.Second),
-		client.WithCommitStatusTimeout(1*time.Minute),
+		client.WithEvaluateTimeout(10*time.Second),
+		client.WithEndorseTimeout(30*time.Second),
+		client.WithSubmitTimeout(20*time.Second),
+		client.WithCommitStatusTimeout(2*time.Minute),
 	)
 	if err != nil {
 		logger.Log.Error("Failed to connect with gateway peer")
@@ -99,9 +118,14 @@ func main() {
 	contract := network.GetContract(chaincodeName)
 
 	ctx := &utils.AppContext{Contract: contract}
+
+	eventCtx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	go utils.ListenStartTrainEvent(network, eventCtx, ctx)
+
 	handler.RegisterRoutes(r, ctx)
 	
-	port := "8080"
+	port := *portArg
 	logger.Log.Info(fmt.Sprintf("Server running on: %s", port))
 	r.Run(":" + port)
 }

@@ -3,11 +3,12 @@ package utils
 import (
 	"os"
 	"fmt"
-	"github.com/hyperledger/fabric-gateway/pkg/identity"
 	"crypto/x509"
+
+	"github.com/hyperledger/fabric-gateway/pkg/identity"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-)	
+)
 
 func NewGrpcConnection(tlsCertPath string, gatewayPeer string, peerEndpoint string) *grpc.ClientConn {
 	certificatePEM, err := os.ReadFile(tlsCertPath)
@@ -23,9 +24,18 @@ func NewGrpcConnection(tlsCertPath string, gatewayPeer string, peerEndpoint stri
 	certPool.AddCert(certificate)
 	transportCredentials := credentials.NewClientTLSFromCert(certPool, gatewayPeer)
 
-	connection, err := grpc.NewClient(peerEndpoint, grpc.WithTransportCredentials(transportCredentials))
+	opts := []grpc.DialOption{
+		grpc.WithTransportCredentials(transportCredentials),
+		grpc.WithDefaultCallOptions(
+			grpc.MaxCallRecvMsgSize(50 * 1024 * 1024), // 50MB
+			grpc.MaxCallSendMsgSize(50 * 1024 * 1024),
+		),
+	}
+
+	conn, err := grpc.NewClient(peerEndpoint, opts...)
 	if err != nil {
 		panic(fmt.Errorf("failed to create gRPC connection: %w", err))
 	}
-	return connection
+
+	return conn
 }

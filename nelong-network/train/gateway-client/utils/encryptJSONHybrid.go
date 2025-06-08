@@ -42,7 +42,13 @@ func EncryptJSONHybrid(pubkey *rsa.PublicKey, data any) (*EncryptedPayload, erro
 		return nil, err
 	}
 
-	ciphertext := gcm.Seal(nil, nonce, jsonBytes, nil)
+	// Encrypt the data
+	ciphertextWithTag := gcm.Seal(nil, nonce, jsonBytes, nil)
+
+	// Split ciphertext and tag
+	tagSize := 16
+	tag := ciphertextWithTag[len(ciphertextWithTag)-tagSize:]
+	ciphertext := ciphertextWithTag[:len(ciphertextWithTag)-tagSize]
 
 	// Use RSA pubkey encrypt AES key
 	encrypedAESKey, err := rsa.EncryptOAEP(
@@ -58,9 +64,11 @@ func EncryptJSONHybrid(pubkey *rsa.PublicKey, data any) (*EncryptedPayload, erro
 
 	// return struct with base64 encode
 	return &EncryptedPayload{
+		Type: "TData",
 		Key: base64.StdEncoding.EncodeToString(encrypedAESKey),
 		Nonce: base64.StdEncoding.EncodeToString(nonce),
 		Data: base64.RawStdEncoding.EncodeToString(ciphertext),
+		Tag:   base64.StdEncoding.EncodeToString(tag),
 	}, nil
 }
 

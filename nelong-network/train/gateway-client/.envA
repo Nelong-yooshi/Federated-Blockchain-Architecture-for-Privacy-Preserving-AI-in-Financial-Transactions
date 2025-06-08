@@ -1,0 +1,13 @@
+TXN_DATA_PATH=../../training_data_test.csv
+ACCT_DATA_PATH=../../training_data_test.csv
+MSP_ID=Org1MSP
+CRYPTO_PATH=../../organizations/peerOrganizations/org1.nelong.com
+CERT_PATH=../../organizations/peerOrganizations/org1.nelong.com/users/User1@org1.nelong.com/msp/signcerts
+KEY_PATH=../../organizations/peerOrganizations/org1.nelong.com/users/User1@org1.nelong.com/msp/keystore
+TLS_CERT_PATH=../../organizations/peerOrganizations/org1.nelong.com/peers/peer0.org1.nelong.com/tls/ca.crt
+PEER_ENDPOINT=dns:///localhost:7051
+GATEWAY_PEER=peer0.org1.nelong.com
+CHAINCODE_NAME=chaincode_v2
+CHANNEL_NAME=fedlearn
+TRAIN_DOMAIN=https://tdx-env.nemo00407.uk
+TRAIN_REGISTER=/train_register

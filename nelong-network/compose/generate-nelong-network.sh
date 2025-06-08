@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ORGS_NUM=$1
 BASE_LISTEN_PORT=7051
 BASE_CHAINCODE_PORT=7052
@@ -46,6 +48,9 @@ echo "services:
       - ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:6053
       - ORDERER_OPERATIONS_LISTENADDRESS=orderer.nelong.com:9443
       - ORDERER_METRICS_PROVIDER=prometheus
+
+      - GRPC_MAX_RECEIVE_MESSAGE_LENGTH=52428800
+      - GRPC_MAX_SEND_MESSAGE_LENGTH=52428800
     working_dir: /root
     command: orderer
     volumes:
@@ -95,6 +100,11 @@ do
         - CORE_METRICS_PROVIDER=prometheus
         - CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG={"peername":"peer0org${j}"}
         - CORE_CHAINCODE_EXECUTETIMEOUT=300s
+
+        # gRPC limit
+        - CORE_PEER_GOSSIP_MAXMESSAGESIZE=51200         # 50MB，以 KB 計
+        - GRPC_MAX_RECEIVE_MESSAGE_LENGTH=52428800      # 50MB
+        - GRPC_MAX_SEND_MESSAGE_LENGTH=52428800         # 50MB
       volumes:
         - ../organizations/peerOrganizations/org${j}.nelong.com/peers/peer0.org${j}.nelong.com:/etc/hyperledger/fabric
         - peer0.org${j}.nelong.com:/var/hyperledger/production

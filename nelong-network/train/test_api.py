@@ -1,16 +1,11 @@
 import requests
-import base64
 
-pubkey = "alj;dfsalj;ksfdal;jk"
+url = 'http://gwcs-a.nemo00407.uk/get_model'
+response = requests.get(url)
 
-resp = requests.post("http://localhost:8080/pubkey", json={
-    "pubkey": base64.b64encode(pubkey.encode()).decode()
-})
-
-print("status code: ", resp.status_code)
-print("response context: ", resp.text)
-
-try:
-    print(resp.json())
-except Exception as e:
-    print("Json parse error: ", e)
+if response.status_code == 200:
+    with open('downloaded_model.json', 'wb') as f:
+        f.write(response.content)
+    print("模型下載完成")
+else:
+    print("下載失敗，狀態碼:", response.status_code)
